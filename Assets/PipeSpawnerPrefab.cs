@@ -18,8 +18,13 @@ public class PipeSpawnerPrefab : MonoBehaviour
     public bool keepSpawning = true;
 
     private float timeRan;
-    private float timeFrequencyToIncreaseSpeed = 3;
+    private float timeFrequencyToIncreaseSpeed = 5;
     private float moveSpeedToUpdateBy = 0;
+
+    private float moveSpeedToUpdateByPerIteration = .8f;
+    private float spawnRateToReduceByPerIteration = 0.075f;
+    private float timeinSecondsPerFrequency = 5;
+
 
 
     void Start()
@@ -39,9 +44,9 @@ public class PipeSpawnerPrefab : MonoBehaviour
                 if (timeRan > timeFrequencyToIncreaseSpeed)
                 {
       
-                    moveSpeedToUpdateBy += 0.25f;
-                    spawnRate = spawnRate - 0.03f;
-                    timeFrequencyToIncreaseSpeed += 3;
+                    moveSpeedToUpdateBy += moveSpeedToUpdateByPerIteration;
+                    spawnRate = spawnRate - spawnRateToReduceByPerIteration;
+                    timeFrequencyToIncreaseSpeed += timeinSecondsPerFrequency;
 
                 }
             }
