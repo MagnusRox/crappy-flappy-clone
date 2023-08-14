@@ -18,7 +18,6 @@ public class LogicScript : MonoBehaviour
     public void Start()
     {
         currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
-        Debug.Log(currentHighScore);
         updateHighScore(currentHighScore);
     }
 

@@ -32,12 +32,12 @@ public class PipeMoveScript : MonoBehaviour
     {
         
         moveSpeed+= updateMoveSpeedBy;
-        Debug.Log("Updating movemnt speed to" + moveSpeed);
     }
 
     private void destroyPipe()
     {
-        Debug.Log(moveSpeed);
         Destroy(gameObject);
     }
+
+
 }

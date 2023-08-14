@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BirdScript : MonoBehaviour
 {
-    public Rigidbody2D rigidbody2D;
+    public new Rigidbody2D rigidbody2D;
     public float flapStrength;
     public LogicScript logic;
     public PipeSpawnerPrefab pipeSpawnerPrefab;
@@ -19,6 +19,7 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        checkBirdFell();
         if (Input.GetKeyDown(KeyCode.Space)) {
             rigidbody2D.velocity = Vector2.up * flapStrength;
         }
@@ -27,7 +28,10 @@ public class BirdScript : MonoBehaviour
 
     }
 
-    void checkBirdFell() { 
+    void checkBirdFell() {
+        if (transform.position.y < -40.0 | transform.position.y > 40.0) {
+            gameOverCall();
+        }
         
     }
 
