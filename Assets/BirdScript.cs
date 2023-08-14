@@ -19,20 +19,14 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkBirdFell();
         if (Input.GetKeyDown(KeyCode.Space)) {
             rigidbody2D.velocity = Vector2.up * flapStrength;
         }
-
-        
-
     }
 
-    void checkBirdFell() {
-        if (transform.position.y < -40.0 | transform.position.y > 40.0) {
-            gameOverCall();
-        }
-        
+
+    void OnBecameInvisible() {
+        gameOverCall();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
