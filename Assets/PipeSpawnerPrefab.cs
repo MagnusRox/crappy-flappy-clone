@@ -31,22 +31,22 @@ public class PipeSpawnerPrefab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (keepSpawning)
         {
-            timeRan+= Time.deltaTime;
-            if(moveSpeedToUpdateBy <= 25) 
+            timeRan += Time.deltaTime;
+            if (moveSpeedToUpdateBy <= 25)
             {
                 if (timeRan > timeFrequencyToIncreaseSpeed)
                 {
-      
+
                     moveSpeedToUpdateBy += moveSpeedToUpdateByPerIteration;
                     spawnRate = spawnRate - spawnRateToReduceByPerIteration;
                     timeFrequencyToIncreaseSpeed += timeinSecondsPerFrequency;
 
                 }
             }
-   
+
             if (timer < spawnRate)
             {
                 timer = timer + Time.deltaTime;

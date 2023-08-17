@@ -5,8 +5,11 @@ public class BirdScript : MonoBehaviour
 {
     public new Rigidbody2D rigidbody2D;
     public float flapStrength;
-    public LogicScript logic;
-    public PipeSpawnerPrefab pipeSpawnerPrefab;
+    private LogicScript logic;
+    private PipeSpawnerPrefab pipeSpawnerPrefab;
+
+    public AudioSource audioSource;
+    public AudioClip collisionSound, jumpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,8 @@ public class BirdScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
+            audioSource.clip = jumpSound;
+            audioSource.Play();
             rigidbody2D.velocity = Vector2.up * flapStrength;
         }
     }
@@ -32,6 +37,8 @@ public class BirdScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6){
+            audioSource.clip = collisionSound;
+            audioSource.Play();
             gameOverCall();
         }
     }

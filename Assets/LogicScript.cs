@@ -9,11 +9,9 @@ public class LogicScript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public Text highScoreText;
-    public Text gameOverText;
-    public Button restartButton;
-    public float incrementSpeedAndSpawnBy = 5;
-
     private int currentHighScore;
+
+    public GameObject gameOverObject;
 
     public void Start()
     {
@@ -22,20 +20,17 @@ public class LogicScript : MonoBehaviour
     }
 
     //[ContextMenu("Increase Score")]
-    public void incrementScore(int scoreToAdd) { 
-        playerScore+=scoreToAdd;
+    public void incrementScore(int scoreToAdd)
+    {
+        playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
         checkHighScore(playerScore);
-        
+
     }
 
     public void gameOver()
     {
-        gameOverText.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
-        if (playerScore >= currentHighScore) {
-            PlayerPrefs.SetInt("HighScore", playerScore);
-        }
+        gameOverObject.SetActive(true);
     }
 
     public void checkHighScore(int playerScore) {
@@ -45,7 +40,8 @@ public class LogicScript : MonoBehaviour
         }   
     }
 
-    public void updateHighScore(int scoreToUpdate) {
+    public void updateHighScore(int scoreToUpdate)
+    {
         highScoreText.text = $"High Score: {scoreToUpdate}";
     }
 
