@@ -30,7 +30,9 @@ public class LogicScript : MonoBehaviour
 
     public void gameOver()
     {
-        gameOverObject.SetActive(true);
+        if(gameOverObject != null) {
+            gameOverObject.SetActive(true);
+        }
     }
 
     public void checkHighScore(int playerScore) {
