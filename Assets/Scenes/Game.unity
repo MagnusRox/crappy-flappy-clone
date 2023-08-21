@@ -1190,6 +1190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: 516962635}
+  gameOver: {fileID: 612118811}
 --- !u!1 &516962635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,7 +1279,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612118812}
-  - component: {fileID: 612118813}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Finish
@@ -1308,18 +1308,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &612118813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612118811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a7d7e1dbb33efd4b83fbd0f4f68c053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &635392634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2231,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 612118813}
-        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
+      - m_Target: {fileID: 427185885}
+        m_TargetAssemblyTypeName: canvasScript, Assembly-CSharp
         m_MethodName: onRestartButtonClick
         m_Mode: 1
         m_Arguments:
@@ -2537,9 +2525,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 612118813}
-        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
-        m_MethodName: OnQuitButtonClick
+      - m_Target: {fileID: 427185885}
+        m_TargetAssemblyTypeName: canvasScript, Assembly-CSharp
+        m_MethodName: onQuitButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

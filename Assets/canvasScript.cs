@@ -1,14 +1,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PauseMenuScript : MonoBehaviour
+public class canvasScript : MonoBehaviour
 {
     public GameObject pause;
+    public GameObject gameOver;
+
     private bool isPaused = false;
     // Start is called before the first frame update
     void Start()
     {
        pause.SetActive(false);
+       gameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +47,9 @@ public class PauseMenuScript : MonoBehaviour
         }
     }
 
-
+    public void onRestartButtonClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 }
