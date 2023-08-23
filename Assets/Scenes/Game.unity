@@ -1473,6 +1473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 635392637}
   flapStrength: 15
+  diveCounter: {fileID: 1734987583}
   audioSource: {fileID: 1087464006}
   collisionSound: {fileID: 8300000, guid: 490bfbc72255342408984f60044487de, type: 3}
   jumpSound: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
@@ -2502,7 +2503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dives Left: 3
+  m_text: 'Dives: 0
 
 '
   m_isRightToLeft: 0

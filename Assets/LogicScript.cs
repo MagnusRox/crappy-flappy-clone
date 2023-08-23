@@ -13,11 +13,14 @@ public class LogicScript : MonoBehaviour
 
     public TMP_Text diveCounterText;
     public GameObject gameOverObject;
+    private float timeRan;
 
     public void Start()
     {
+        PlayerPrefs.SetInt("DiveCount", 0);
         currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
         updateHighScore(currentHighScore);
+        
     }
 
     //[ContextMenu("Increase Score")]
@@ -52,8 +55,23 @@ public class LogicScript : MonoBehaviour
         highScoreText.text = $"High Score: {scoreToUpdate}";
     }
 
-    public void updateDive() { 
+    public void Update() {
+        timeRan += Time.deltaTime;
+        if (timeRan > 5) {
+            int diveCount = PlayerPrefs.GetInt("DiveCount", 0);
+            if (diveCount < 3) {
+                diveCount += 1;
+                diveCounterText.text = $"Dives : {diveCount}";
+                PlayerPrefs.SetInt("DiveCount", diveCount);
+                timeRan = 0;
+
+            }
+                
+        }
             
+            
+
+
     }
 
 }

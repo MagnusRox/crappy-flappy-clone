@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -5,11 +6,14 @@ public class BirdScript : MonoBehaviour
 {
     public new Rigidbody2D rigidbody2D;
     public float flapStrength;
+    public TMP_Text diveCounter;
+
     private LogicScript logic;
     private PipeSpawnerPrefab pipeSpawnerPrefab;
 
     public AudioSource audioSource;
     public AudioClip collisionSound, jumpSound, diveSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +34,17 @@ public class BirdScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            audioSource.clip = diveSound;
-            audioSource.Play();
-            rigidbody2D.velocity = Vector2.down * flapStrength*2;
+            int diveCount = PlayerPrefs.GetInt("DiveCount", 0);
+            if (diveCount > 0) {
+                audioSource.clip = diveSound;
+                audioSource.Play();
+                rigidbody2D.velocity = Vector2.down * flapStrength * 1.5f;
+                PlayerPrefs.SetInt("DiveCount", diveCount - 1);
+                diveCounter.text = $"Dives : {diveCount - 1}";
+
+
+            }
+
         }
     }
 
