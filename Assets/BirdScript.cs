@@ -9,7 +9,7 @@ public class BirdScript : MonoBehaviour
     private PipeSpawnerPrefab pipeSpawnerPrefab;
 
     public AudioSource audioSource;
-    public AudioClip collisionSound, jumpSound;
+    public AudioClip collisionSound, jumpSound, diveSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +22,17 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.W)) {
             audioSource.clip = jumpSound;
             audioSource.Play();
             rigidbody2D.velocity = Vector2.up * flapStrength;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            audioSource.clip = diveSound;
+            audioSource.Play();
+            rigidbody2D.velocity = Vector2.down * flapStrength*2;
         }
     }
 

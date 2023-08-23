@@ -8,7 +8,7 @@ public class PipeSpawnerPrefab : MonoBehaviour
     public GameObject pipe;
 
 
-    public float spawnRate = 5;
+    public float spawnRate = 4;
     private float timer;
     public float pipeHeightOffset = 10;
     public bool keepSpawning = true;
@@ -18,7 +18,7 @@ public class PipeSpawnerPrefab : MonoBehaviour
     private float moveSpeedToUpdateBy = 0;
 
     private float moveSpeedToUpdateByPerIteration = .8f;
-    private float spawnRateToReduceByPerIteration = 0.075f;
+    private float spawnRateToReduceByPerIteration = 0.090f;
     private float timeinSecondsPerFrequency = 5;
 
 

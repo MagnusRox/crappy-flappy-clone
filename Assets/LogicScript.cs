@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class LogicScript : MonoBehaviour
 {
 
@@ -11,6 +11,7 @@ public class LogicScript : MonoBehaviour
     public Text highScoreText;
     private int currentHighScore;
 
+    public TMP_Text diveCounterText;
     public GameObject gameOverObject;
 
     public void Start()
@@ -33,6 +34,10 @@ public class LogicScript : MonoBehaviour
         if(gameOverObject != null) {
             gameOverObject.SetActive(true);
         }
+        if(playerScore > currentHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", playerScore);
+        }
     }
 
     public void checkHighScore(int playerScore) {
@@ -45,6 +50,10 @@ public class LogicScript : MonoBehaviour
     public void updateHighScore(int scoreToUpdate)
     {
         highScoreText.text = $"High Score: {scoreToUpdate}";
+    }
+
+    public void updateDive() { 
+            
     }
 
 }
