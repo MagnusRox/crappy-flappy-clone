@@ -41,8 +41,6 @@ public class BirdScript : MonoBehaviour
                 rigidbody2D.velocity = Vector2.down * flapStrength * 1.5f;
                 PlayerPrefs.SetInt("DiveCount", diveCount - 1);
                 diveCounter.text = $"Dives : {diveCount - 1}";
-
-
             }
 
         }

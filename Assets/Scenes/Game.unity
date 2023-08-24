@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pipe: {fileID: 5056822152186355507, guid: 166c3a71b53ada54fa05410c6820f055, type: 3}
-  spawnRate: 2.5
+  spawnRate: 1.75
   pipeHeightOffset: 10
   keepSpawning: 1
 --- !u!4 &94845702
@@ -2801,9 +2801,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 963194228}
+  - {fileID: 889778808}
   - {fileID: 921936536}
   - {fileID: 287887095}
   - {fileID: 1361302651}
   - {fileID: 1527633596}
   - {fileID: 36346956}
-  - {fileID: 889778808}

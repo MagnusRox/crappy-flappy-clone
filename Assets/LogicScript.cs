@@ -56,22 +56,24 @@ public class LogicScript : MonoBehaviour
     }
 
     public void Update() {
-        timeRan += Time.deltaTime;
-        if (timeRan > 5) {
-            int diveCount = PlayerPrefs.GetInt("DiveCount", 0);
-            if (diveCount < 3) {
+        int diveCount = PlayerPrefs.GetInt("DiveCount", 0);
+        if (diveCount < 2) {
+            timeRan += Time.deltaTime;
+            if (timeRan > 5)
+            {
                 diveCount += 1;
                 diveCounterText.text = $"Dives : {diveCount}";
                 PlayerPrefs.SetInt("DiveCount", diveCount);
                 timeRan = 0;
 
             }
-                
-        }
+
+        } 
+    }
             
             
 
 
     }
 
-}
+

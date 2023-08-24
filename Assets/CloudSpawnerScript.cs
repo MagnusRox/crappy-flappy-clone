@@ -11,8 +11,6 @@ public class CloudSpawnerScript : MonoBehaviour
     private GameObject firstCloud;
     private GameObject secondCloud;
 
-
-    private bool isFirst = true;
     private float bufferXGap = 20.0f;
 
     private
