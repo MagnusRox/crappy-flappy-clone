@@ -34,17 +34,18 @@ public class canvasScript : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (!isPaused)
-            {
-                isPaused = true;
-                Time.timeScale = 0f;
-                pause.SetActive(true);
-            }
-            else {
-                onResumeButtonClick();
-            }
-        }
+        if(!gameOver.activeSelf){
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (!isPaused)
+                {
+                    isPaused = true;
+                    Time.timeScale = 0f;
+                    pause.SetActive(true);
+                }
+                else {
+                    onResumeButtonClick();
+                }
+            } }
     }
 
     public void onRestartButtonClick()

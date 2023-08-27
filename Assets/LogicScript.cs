@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+
 public class LogicScript : MonoBehaviour
 {
 
@@ -11,7 +11,7 @@ public class LogicScript : MonoBehaviour
     public Text highScoreText;
     private int currentHighScore;
 
-    public TMP_Text diveCounterText;
+    public Text diveCounterText;
     public GameObject gameOverObject;
     private float timeRan;
 
@@ -36,6 +36,7 @@ public class LogicScript : MonoBehaviour
     {
         if(gameOverObject != null) {
             gameOverObject.SetActive(true);
+
         }
         if(playerScore > currentHighScore)
         {
@@ -57,23 +58,20 @@ public class LogicScript : MonoBehaviour
 
     public void Update() {
         int diveCount = PlayerPrefs.GetInt("DiveCount", 0);
-        if (diveCount < 2) {
+        if (diveCount < 3) {
             timeRan += Time.deltaTime;
             if (timeRan > 5)
             {
                 diveCount += 1;
-                diveCounterText.text = $"Dives : {diveCount}";
+                diveCounterText.text = $"Dives Left: {diveCount}";
                 PlayerPrefs.SetInt("DiveCount", diveCount);
                 timeRan = 0;
 
             }
 
         } 
-    }
-            
-            
-
 
     }
+   }
 
 

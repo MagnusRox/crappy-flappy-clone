@@ -1,12 +1,11 @@
-using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class BirdScript : MonoBehaviour
 {
     public new Rigidbody2D rigidbody2D;
     public float flapStrength;
-    public TMP_Text diveCounter;
+    public Text diveCounter;
 
     private LogicScript logic;
     private PipeSpawnerPrefab pipeSpawnerPrefab;
@@ -40,7 +39,7 @@ public class BirdScript : MonoBehaviour
                 audioSource.Play();
                 rigidbody2D.velocity = Vector2.down * flapStrength * 1.5f;
                 PlayerPrefs.SetInt("DiveCount", diveCount - 1);
-                diveCounter.text = $"Dives : {diveCount - 1}";
+                diveCounter.text = $"Dives Left: {diveCount - 1}";
             }
 
         }
